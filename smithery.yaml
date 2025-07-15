@@ -7,9 +7,6 @@ startCommand:
   type: "http"
   configSchema:
     type: object
-    required:
-      - accessKeyId
-      - secretAccessKey
     properties:
       accessKeyId:
         type: string
