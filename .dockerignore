@@ -1,0 +1,13 @@
+node_modules
+dist
+.git
+.gitignore
+README.md
+*.log
+.npm
+.nyc_output
+.smithery
+test*
+debug*
+todo.md
+CHANGELOG.md
