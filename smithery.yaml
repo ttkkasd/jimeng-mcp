@@ -35,3 +35,4 @@ startCommand:
 
 env:
   NODE_ENV: "production"
+  MCP_MODE: "http"
