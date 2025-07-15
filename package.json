@@ -1,0 +1,41 @@
+{
+  "name": "jimeng-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Volcengine Jimeng image generation API",
+  "main": "dist/index.js",
+  "bin": {
+    "jimeng-mcp": "./bin/jimeng-mcp.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "node test.js",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "keywords": ["mcp", "image-generation", "volcengine", "jimeng"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "prettier": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ttkkasd/jimeng-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ttkkasd/jimeng-mcp/issues"
+  },
+  "homepage": "https://github.com/ttkkasd/jimeng-mcp#readme"
+}

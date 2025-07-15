@@ -1,0 +1,14 @@
+# Jimeng MCP Server
+
+node_modules/
+dist/
+*.log
+.DS_Store
+.env
+.env.local
+.env.production
+.env.staging
+.vscode/
+.idea/
+*.tgz
+*.tar.gz
