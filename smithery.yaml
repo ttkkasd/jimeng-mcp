@@ -1,0 +1,29 @@
+# Smithery configuration file for jimeng-mcp
+# Volcengine Jimeng Image Generation MCP Server
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - accessKeyId
+      - secretAccessKey
+    properties:
+      accessKeyId:
+        type: string
+        title: "Access Key ID"
+        description: "Your Volcengine Access Key ID for Jimeng API"
+      secretAccessKey:
+        type: string
+        title: "Secret Access Key"
+        description: "Your Volcengine Secret Access Key for Jimeng API"
+      region:
+        type: string
+        title: "Region"
+        description: "Volcengine region (optional)"
+        default: "cn-north-1"
+      endpoint:
+        type: string
+        title: "Endpoint"
+        description: "Custom endpoint URL (optional)"
