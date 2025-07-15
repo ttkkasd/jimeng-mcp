@@ -5,30 +5,32 @@ runtime: "typescript"
 
 startCommand:
   type: "http"
-  configSchema:
-    type: object
-    properties:
-      accessKeyId:
-        type: string
-        title: "Access Key ID"
-        description: "Your Volcengine Access Key ID for Jimeng API"
-      secretAccessKey:
-        type: string
-        title: "Secret Access Key"
-        description: "Your Volcengine Secret Access Key for Jimeng API"
-      region:
-        type: string
-        title: "Region"
-        description: "Volcengine region"
-        default: "cn-north-1"
-      endpoint:
-        type: string
-        title: "Endpoint"
-        description: "Custom endpoint URL (optional)"
-  exampleConfig:
-    accessKeyId: "your-access-key-id"
-    secretAccessKey: "your-secret-access-key"
-    region: "cn-north-1"
+
+configSchema:
+  type: object
+  properties:
+    accessKeyId:
+      type: string
+      title: "Access Key ID"
+      description: "Your Volcengine Access Key ID for Jimeng API"
+    secretAccessKey:
+      type: string
+      title: "Secret Access Key"  
+      description: "Your Volcengine Secret Access Key for Jimeng API"
+    region:
+      type: string
+      title: "Region"
+      description: "Volcengine region"
+      default: "cn-north-1"
+    endpoint:
+      type: string
+      title: "Endpoint"
+      description: "Custom endpoint URL (optional)"
+
+exampleConfig:
+  accessKeyId: "your-access-key-id"
+  secretAccessKey: "your-secret-access-key"
+  region: "cn-north-1"
 
 env:
   NODE_ENV: "production"
