@@ -31,6 +31,7 @@ function getCredentials(query?: any): VolcengineCredentials {
 }
 
 server.setRequestHandler(ListToolsRequestSchema, async () => {
+  // Return tools even without credentials for lazy loading support
   const tools: Tool[] = [
     {
       name: 'generateImage',
@@ -184,6 +185,7 @@ async function main() {
           
           // Set up handlers with credentials from config
           mcpServer.setRequestHandler(ListToolsRequestSchema, async () => {
+            // Return tools even without credentials for lazy loading support
             const tools: Tool[] = [
               {
                 name: 'generateImage',
