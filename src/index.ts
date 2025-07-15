@@ -291,6 +291,47 @@ async function main() {
           res.writeHead(500, { 'Content-Type': 'text/plain' });
           res.end('Internal Server Error');
         }
+      } else if (urlParts.pathname === '/tools') {
+        // Tools discovery endpoint for Smithery scanning
+        try {
+          const tools = [
+            {
+              name: 'generateImage',
+              description: '调用即梦AI生成图像',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  prompt: {
+                    type: 'string',
+                    description: '生成图像的文本描述'
+                  },
+                  req_key: {
+                    type: 'string',
+                    description: '模型版本，默认值: jimeng_high_aes_general_v21_L',
+                    default: 'jimeng_high_aes_general_v21_L'
+                  },
+                  seed: {
+                    type: 'number',
+                    description: '随机种子，默认值：-1',
+                    default: -1
+                  },
+                  negative_prompt: {
+                    type: 'string',
+                    description: '负面提示词，描述不希望在图像中出现的内容'
+                  }
+                },
+                required: ['prompt']
+              }
+            }
+          ];
+          
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ tools }));
+        } catch (error) {
+          console.error('Tools discovery error:', error);
+          res.writeHead(500, { 'Content-Type': 'text/plain' });
+          res.end('Internal Server Error');
+        }
       } else {
         // Health check endpoint
         res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -298,7 +339,8 @@ async function main() {
           status: 'healthy', 
           name: 'jimeng-mcp',
           version: '1.0.0',
-          mode: 'http'
+          mode: 'http',
+          endpoints: ['/mcp', '/tools']
         }));
       }
     });
